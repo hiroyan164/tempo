@@ -50,6 +50,9 @@ Emitted traceId <traceid> for service frontend route /cart
 Copy one of these trace ids.
 
 4. Navigate to [Grafana](http://localhost:3000/explore) and paste the trace id to request it from Tempo.
+```sh:
+open http://localhost:3000/explore
+```
 
 5. To stop the setup use -
 

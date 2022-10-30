@@ -57,6 +57,10 @@ Copy one of these trace ids.
 4. Navigate to [Grafana](http://localhost:3000/explore) and paste the trace id to request it from Tempo.
 Also notice that you can query Tempo metrics from the Prometheus data source setup in Grafana.
 
+```sh:
+open http://localhost:3000/explore
+```
+
 5. To stop the setup use -
 
 ```console

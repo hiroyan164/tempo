@@ -2,7 +2,7 @@ version: "3"
 services:
 
   distributor:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=distributor -config.file=/etc/tempo.yaml"
     volumes:
       - ./tempo-distributed.yaml:/etc/tempo.yaml
@@ -10,7 +10,7 @@ services:
       - "3200"   # tempo
 
   ingester-0:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=ingester -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -19,7 +19,7 @@ services:
       - "3200"   # tempo
 
   ingester-1:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=ingester -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -28,7 +28,7 @@ services:
       - "3200"   # tempo
 
   ingester-2:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=ingester -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -37,7 +37,7 @@ services:
       - "3200"   # tempo
 
   query-frontend:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=query-frontend -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -46,7 +46,7 @@ services:
       - "3200:3200"   # tempo
 
   querier:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=querier -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -55,7 +55,7 @@ services:
       - "3200"   # tempo
 
   compactor:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=compactor -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
@@ -64,7 +64,7 @@ services:
       - "3200"   # tempo
 
   metrics_generator:
-    image: tempo:latest
+    image: grafana/tempo:latest
     command: "-target=metrics-generator -config.file=/etc/tempo.yaml"
     restart: always
     volumes:
